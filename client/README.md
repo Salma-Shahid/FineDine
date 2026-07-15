@@ -1,4 +1,4 @@
-# QuickDine Frontend
+# FineDine Frontend
 
 Welcome to the frontend repository for **FineDine** – a modern, premium table booking and reservation platform designed for a seamless dining experience.
 
