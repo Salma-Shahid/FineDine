@@ -1,6 +1,6 @@
 # QuickDine Frontend
 
-Welcome to the frontend repository for **QuickDine** – a modern, premium table booking and reservation platform designed for a seamless dining experience.
+Welcome to the frontend repository for **FineDine** – a modern, premium table booking and reservation platform designed for a seamless dining experience.
 
 This application is built using **React 19**, **Vite**, **TypeScript**, and **Tailwind CSS v4**.
 
