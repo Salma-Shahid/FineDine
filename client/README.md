@@ -33,8 +33,8 @@ Ensure you have **Node.js** (v18 or higher) and **npm** installed.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/quickdine-frontend.git
-   cd quickdine-frontend
+  https://github.com/Salma-Shahid/FineDine.git
+   cd finedine-frontend
    ```
 
 2. Install dependencies:
