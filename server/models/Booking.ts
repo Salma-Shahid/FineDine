@@ -1,0 +1,48 @@
+import { Document, model, Schema, Types } from "mongoose";
+import crypto from "crypto";
+export interface IBooking extends Document {
+  user: Types.ObjectId;
+  restaurant: Types.ObjectId;
+  date: Date;
+  time: string;
+  guests: number;
+  occasion?: string;
+  specialRequests?: string;
+  status: "confirmed" | "canceled" | "completed";
+  bookingId: string;
+  createAt: Date;
+  updateAt: Date;
+}
+
+const BookingSchema = new Schema<IBooking>(
+  {
+    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    restaurant: {
+      type: Schema.Types.ObjectId,
+      ref: "Restaurant",
+      required: true,
+    },
+    date: { type: Date, required: true },
+    time: { type: String, required: true },
+    guests: { type: Number, required: true, min: 1 },
+    occasion: { type: String, trim: true },
+    specialRequests: { type: String, trim: true },
+    status: {
+      type: String,
+      enum: ["confirmed", "canceled", "completed"],
+      default: "confirmed",
+    },
+    bookingId: { type: String, unique: true },
+  },
+  { timestamps: true },
+);
+
+// Auto-generated reference code on save
+
+BookingSchema.pre("save", function () {
+  if (!this.bookingId) {
+    this.bookingId = `GR-${crypto.randomBytes(4).toString("hex").toUpperCase()}`;
+  }
+});
+
+export const Booking = model<IBooking>("Booking", BookingSchema);
