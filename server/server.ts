@@ -4,6 +4,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import authRouter from "./routes/authRoutes.js";
 import restaurantRouter from "./routes/restaurantRoutes.js";
+import bookingRouter from "./routes/bookingRoutes.js";
 const app = express();
 
 // Connect to MongoDB
@@ -21,6 +22,7 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/api/auth", authRouter)
 app.use("/api/restaurant", restaurantRouter)
+app.use("/api/bookings", bookingRouter)
 
 // Global Error Handler
 
